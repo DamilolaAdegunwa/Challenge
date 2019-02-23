@@ -38,9 +38,9 @@ namespace FWK.ApiServices
             {
                 return _service;
             }
-        } 
+        }
 
-     
+
 
         [HttpGet("{id}")]
         public virtual async Task<IActionResult> GetByIdAsync(TPrimaryKey id)
@@ -54,15 +54,22 @@ namespace FWK.ApiServices
                 return ReturnError<TDto>(ex);
             }
         }
-         
+
 
         [HttpGet()]
         public virtual async Task<IActionResult> GetPagedList(TFilter filter)
         {
             try
             {
-                var pList = await this.Service.GetDtoPagedListAsync<TFilter>(filter);
-                return ReturnData<PagedResult<TDto>>(pList);
+                if (this.ModelState.IsValid)
+                {
+                    var pList = await this.Service.GetDtoPagedListAsync<TFilter>(filter);
+                    return ReturnData<PagedResult<TDto>>(pList);
+                }
+                else
+                {
+                    return ReturnError<TDto>(this.ModelState);
+                }
             }
             catch (Exception ex)
             {
@@ -92,7 +99,7 @@ namespace FWK.ApiServices
             {
                 return ReturnError<TDto>(ex);
             }
-        } 
+        }
 
         [HttpPut("{id}")]
         public virtual async Task<IActionResult> UpdateEntity(TPrimaryKey id, [FromBody] TDto dto)
@@ -115,8 +122,8 @@ namespace FWK.ApiServices
                 return ReturnError<TDto>(ex);
             }
         }
-         
-         
+
+
         [HttpDelete("{id}")]
         public virtual async Task<IActionResult> DeleteById(TPrimaryKey id)
         {
@@ -130,13 +137,13 @@ namespace FWK.ApiServices
             {
                 return ReturnError<TDto>(ex);
             }
-        } 
+        }
 
 
     }
 
-    
 
-    
+
+
 
 }

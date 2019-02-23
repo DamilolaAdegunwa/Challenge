@@ -28,7 +28,7 @@ namespace FWK.Domain.Entities
         public int? Page { get; set; }
 
 
-        public int? PageSize { get; set; }
+        public virtual int? PageSize { get; set; }
 
 
         public String Sort { get; set; }

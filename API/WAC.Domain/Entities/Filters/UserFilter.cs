@@ -5,12 +5,15 @@ using System.Text;
 using FWK.Domain.Entities;
 using System.Linq;
 using FWK.Domain.Extensions;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace WAC.Domain.Entities.Filters
 {
     public class UserFilter : FilterPagedListBase<User, string>
-    { 
+    {
+
+        [Range(0, 200)]
+        public override int? PageSize { get => base.PageSize; set => base.PageSize = value; }
         public string Location { get; set; }
         public override List<Expression<Func<User, object>>> GetIncludesForPageList()
         {
