@@ -313,6 +313,7 @@ export abstract class BaseCrudComponent<T extends ADto, F extends FilterDTO> ext
 
 		this.service.requestAllByFilter(this.filter).pipe(
 			tap(res => {
+				this.beforeSearch(res.DataObject.Items);
 				this.dataSource.entitySubject.next(res.DataObject.Items);
 				this.dataSource.paginatorTotalSubject.next(res.DataObject.TotalCount);
 			}),
@@ -323,7 +324,9 @@ export abstract class BaseCrudComponent<T extends ADto, F extends FilterDTO> ext
 
 
 	}
+	beforeSearch(items: T[]): any {
 
+	}
 
 	filterConfiguration(): any {
 		const filter: any = {}; 

@@ -16,7 +16,8 @@ export class User extends Dto<string> {
 	BirthDate: Date
 	Uuid: string
 	UserName: string
-	Location: Location 
+	Location: Location
+	older: boolean
  
 }
 

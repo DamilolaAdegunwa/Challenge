@@ -51,7 +51,11 @@
 				 
 				<ng-container matColumnDef="Gender">
 					<mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
-					<mat-cell *matCellDef="let row">{{row.Gender}}</mat-cell>
+
+					<mat-cell *matCellDef="let row" title="{{row.Gender}}">
+						<i class="fas fa-venus fa-2x" [hidden]="row.Gender != 'female'"></i>
+						<i class="fas fa-mars fa-2x" [hidden]="row.Gender != 'male'"></i> 
+					</mat-cell>
 				</ng-container>
 
 				<ng-container matColumnDef="FirstName">
@@ -65,16 +69,16 @@
 				</ng-container>
 
 				<ng-container matColumnDef="Email">
-					<mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
-					<mat-cell *matCellDef="let row">{{row.Email}}</mat-cell>
+					<mat-header-cell xFlex="250px" *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+					<mat-cell xFlex="250px" *matCellDef="let row">{{row.Email}}</mat-cell>
 				</ng-container>
 
 				<ng-container matColumnDef="BirthDate">
 					<mat-header-cell *matHeaderCellDef mat-sort-header>Birth Date</mat-header-cell>
-					<mat-cell *matCellDef="let row">{{row.BirthDate}}</mat-cell>
+					<mat-cell *matCellDef="let row">{{row.BirthDate | date:'dd/MM/yyyy'}}</mat-cell>
 				</ng-container>
 
-				<ng-container matColumnDef="UserName">
+				<ng-container matColumnDef="UserName" >
 					<mat-header-cell *matHeaderCellDef mat-sort-header>User Name</mat-header-cell>
 					<mat-cell *matCellDef="let row">{{row.UserName}}</mat-cell>
 				</ng-container>
@@ -88,15 +92,19 @@
 
 				<ng-container matColumnDef="Acciones">
 					<mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
-					<mat-cell *matCellDef="let row"> 
-						<a (click)="onEdit(row)" [hidden]="!allowModify" mat-icon-button color="primary" matTooltip="Editar">
-							<mat-icon>Modificar</mat-icon>
+					<mat-cell *matCellDef="let row">
+						<a (click)="onEdit(row)" mat-icon-button color="primary" matTooltip="Editar">
+							<mat-icon>create</mat-icon>
 						</a>
+						&nbsp;
+						<button mat-icon-button color="warn" type="button" [hidden]="!allowDelete" (click)="onDelete(row)" matTooltip="Eliminar">
+							<mat-icon>delete</mat-icon>
+						</button>&nbsp;
 					</mat-cell>
 				</ng-container>
 
 				<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-				<mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+				<mat-row   [ngClass]="{'highlight': row.older}"  *matRowDef="let row; columns: displayedColumns"></mat-row>
 			</mat-table>
 
 			<div class="mat-table__message" *ngIf="!dataSource.hasItems">No hay registros</div>

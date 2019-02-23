@@ -31,7 +31,7 @@ namespace WAC.WebService.Admin
                    .ForMember(d => d.FirstName, o => o.MapFrom(s => s.name.first))
                    .ForMember(d => d.LastName, o => o.MapFrom(s => s.name.last))
                    .ForMember(d => d.Email, o => o.MapFrom(s => s.email))
-                   .ForMember(d => d.BirthDate, o => o.MapFrom(s => s.registered))
+                   .ForMember(d => d.BirthDate, o => o.MapFrom(s => s.registered.date))
                    .ForMember(d => d.Uuid, o => o.MapFrom(s => s.login.uuid))
                    .ForMember(d => d.UserName, o => o.MapFrom(s => s.login.username));
 
