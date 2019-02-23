@@ -8,12 +8,14 @@
 		</div>
 	</ng-container>
 
+ 
+		<ng-container mPortletHeadTools>
 
-	<ng-container mPortletHeadTools *ngIf="allowAdd">
+			<a (click)="onCreate()" [disabled]="!allowAdd" mat-raised-button color="primary" matTooltip="Crear"><i class="fa fa-plus"></i><span> Create</span></a>
 
-		<a (click)="onCreate()" [hidden]="!allowAdd" mat-raised-button color="primary" matTooltip="Crear"><i class="fa fa-plus"></i><span> Create</span></a>
+		</ng-container>
+ 
 
-	</ng-container>
 
 	<ng-container mPortletBody>
 

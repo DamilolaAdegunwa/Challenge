@@ -7,16 +7,16 @@
 				<h3 class="m-portlet__head-text">
 					{{title}}
 				</h3>
-			</div> 
+			</div>
 		</ng-container>
 		<ng-container mPortletHeadTools>
 
 			<button type="button" (click)="goBack()" mat-raised-button matTooltip="Back to the list of {{title}}">Return</button>&nbsp;
-			 
+
 
 
 			<div class="m-buttons--wrapper">
-			 
+
 
 				<m-spinner-button [options]="spinner" (click)="onSave(detailForm)" matTooltip="Save">Save</m-spinner-button>
 
@@ -24,7 +24,7 @@
 					<mat-icon>more_vert</mat-icon>
 				</button>
 				<mat-menu #menu="matMenu">
-					<button mat-menu-item color="primary" (click)="onSave(detailForm)">Save and Exit</button> 
+					<button mat-menu-item color="primary" (click)="onSave(detailForm)">Save and Exit</button>
 					<button mat-menu-item color="primary" (click)="onSaveAndContinue()">Save and Continue</button>
 				</mat-menu>
 			</div>
@@ -36,13 +36,14 @@
 			</div>
 			<div class="m-form__section m-form__section--first">
 				<div class="m-form__group">
-					<div class="row"> 
+					<div class="row">
+
 						<div class="col-md-6 m--margin-bottom-10-mobile">
 							<mat-form-field class="mat-form-field-fluid">
 								<input #FirstName="ngModel" matInput placeholder="First Name" name="FirstName" [(ngModel)]="detail.FirstName" required>
 								<mat-error>
 									First Name
-									<strong>requerido</strong>
+									<strong>required</strong>
 								</mat-error>
 							</mat-form-field>
 						</div>
@@ -51,13 +52,80 @@
 								<input #LastName="ngModel" matInput placeholder="Last Name" name="LastName" [(ngModel)]="detail.LastName" required>
 								<mat-error>
 									Last Name
-									<strong>requerido</strong>
+									<strong>required</strong>
 								</mat-error>
 							</mat-form-field>
 						</div>
 					</div>
-				</div>
+					<mat-divider></mat-divider>
+					<h4 mat-subheader>General Information</h4>
+					<div class="row" *ngIf="detail.Location">
+						<div class="col-md-6">
+							<mat-list>
 
+
+								<mat-list-item>
+									<mat-icon mat-list-icon>
+										<i class="fas fa-venus" style="font-size: 1.6rem;" [hidden]="detail.Gender != 'female'"></i>
+										<i class="fas fa-mars" style="font-size: 1.6rem;" [hidden]="detail.Gender != 'male'"></i>
+									</mat-icon>
+									<h4 mat-line>Gender: <span>	<b> {{detail.Gender}}</b> </span></h4>
+								</mat-list-item>
+								<mat-list-item>
+									<mat-icon mat-list-icon>mail_outline</mat-icon>
+									<h4 mat-line>Email: <span>	<b> {{detail.Email}}</b> </span></h4>
+								</mat-list-item>
+								<mat-list-item>
+									<mat-icon mat-list-icon>date_range</mat-icon>
+									<h4 mat-line>Birth Date: <span>	<b> {{detail.BirthDate  | date:'dd/MM/yyyy'}}</b> </span></h4>
+								</mat-list-item>
+
+
+								<mat-list-item>
+									<mat-icon mat-list-icon>linear_scaler</mat-icon>
+									<h4 mat-line>Uuid: <span>	<b> {{detail.Uuid}}</b> </span></h4>
+								</mat-list-item>
+
+								<mat-list-item>
+									<mat-icon mat-list-icon>linear_scaler</mat-icon>
+									<h4 mat-line>User Name: <span>	<b> {{detail.UserName}}</b> </span></h4>
+								</mat-list-item>
+
+
+
+							</mat-list>
+						</div>
+
+						<div class="col-md-6">
+							<mat-list>
+								<h3 mat-subheader>Location</h3>
+								<mat-list-item>
+									<mat-icon mat-list-icon>linear_scaler</mat-icon>
+									<h4 mat-line>State: <span>	<b> {{detail.Location.State}}</b> </span></h4>
+								</mat-list-item>
+
+								<mat-list-item>
+									<mat-icon mat-list-icon>linear_scaler</mat-icon>
+									<h4 mat-line>Street: <span>	<b>	{{detail.Location.Street}} </b></span></h4>
+								</mat-list-item>
+
+								<mat-list-item>
+									<mat-icon mat-list-icon>linear_scaler</mat-icon>
+									<h4 mat-line>City: <span>	<b>{{detail.Location.City}}</b> </span></h4>
+								</mat-list-item>
+
+								<mat-list-item>
+									<mat-icon mat-list-icon>linear_scaler</mat-icon>
+									<h4 mat-line>Post Code: <span><b>{{detail.Location.PostCode}}</b>	 </span></h4>
+								</mat-list-item>
+
+							</mat-list>
+						</div>
+
+					</div>
+
+
+				</div>
 			</div>
 		</ng-container>
 	</m-portlet>

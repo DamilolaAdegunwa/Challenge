@@ -2,6 +2,7 @@
 using FWK.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace WAC.Admin.AppService.ModelDto
@@ -9,7 +10,11 @@ namespace WAC.Admin.AppService.ModelDto
     public class UserDto : EntityDto<string>
     {  
         public string Gender { get; set; }
+
+        [Required]
         public string FirstName { get; set; }
+
+        [Required]
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
