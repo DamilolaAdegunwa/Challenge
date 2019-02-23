@@ -48,13 +48,13 @@ export abstract class CrudService<T extends ADto> implements Service {
 		}
 		else {
 			let url = this.endpoint + '/' + data.IdValue;
-			return this.http.post<ResponseModel<T>>(url, data);
+			return this.http.put<ResponseModel<T>>(url, data);
 		} 
 	}
 
 	delete(id: number): Observable<any> {
 		let url = this.endpoint + '/' + id
-		return this.http.delete(url, null);
+		return this.http.delete(url);
 	}
 
 
