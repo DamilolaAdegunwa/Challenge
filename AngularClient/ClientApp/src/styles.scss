@@ -1,0 +1,330 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '../node_modules/toastr/build/toastr.css';
+@import '../node_modules/ion-rangeslider/css/ion.rangeSlider.css';
+@import '../node_modules/ion-rangeslider/css/ion.rangeSlider.skinFlat.css';
+
+
+.mat-table__wrapper {
+	width: 100%;
+	overflow-x: auto;
+
+
+	mat-cell, mat-header-cell {
+		min-height: 100%;
+	}
+}
+
+.mat-table__wrapper .mat-table {
+	min-width: 1000px;
+	width: 100%;
+}
+
+.mat-table__wrapper--dashboard .mat-table {
+	min-width: 600px !important;
+}
+
+
+.mat-table__wrapper .mat-table .email-cell {
+	word-wrap: normal;
+	width: 180px;
+	flex: auto;
+}
+
+
+.m-mat-dialog-container__wrapper .mat-dialog-container {
+	padding: 0;
+	overflow-x: hidden;
+
+	.m-portlet {
+		margin-bottom: 0;
+	}
+
+	.alert {
+		border-radius: 0 !important;
+		width: 1032px;
+	}
+}
+
+.mat-table__wrapper--sub .mat-table {
+	min-width: 400px;
+
+	.mat-cell:last-child {
+		flex: 0 0 100px;
+	}
+
+	.mat-header-cell:last-child {
+		flex: 0 0 100px;
+	}
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.example-full-width {
+	width: 100%;
+}
+
+mat-radio-button {
+	padding-right: 16px;
+}
+
+.m-form--alert {
+	margin-top: 30px;
+}
+
+.mat-column-checkbox {
+	flex: 0 0 68px;
+}
+
+.mat-column-id {
+	flex: 0 0 68px;
+}
+
+.mat-column-main {
+	flex: 0 0 568px;
+}
+
+.mat-column-actions {
+	flex: 0 0 160px;
+}
+
+.mat-table__bottom {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.mat-column-vinCode {
+	flex: 0 0 170px;
+}
+
+.m-portlet-mx-0 {
+	margin: -1.1rem -2.2rem 0;
+	overflow-x: hidden;
+}
+.mat-table__wrapper .mat-table .mat-row-editing.mat-row-inactive {
+	height: 0;
+	min-height: 0;
+	padding: 0 !important;
+	border-bottom:0 !important;
+}
+
+.mat-form-field {
+	width: 100%;
+}
+
+.mat-table__wrapper .mat-table {
+	min-width: initial !important;
+}
+
+.m-dropdown.m-dropdown--header-bg-fill .m-dropdown__header {
+	background-color: #ffd203 !important;
+}
+
+.m-card-user .m-card-user__details .m-card-user__name {
+	color: black !important;
+}
+
+.m-card-user.m-card-user--skin-dark .m-card-user__details .m-card-user__email {
+	color: gray !important;
+}
+
+.m-topbar .m-topbar__nav.m-nav > .m-nav__item.m-topbar__user-profile.m-topbar__user-profile--img.m-dropdown--arrow .m-dropdown__arrow {
+	color: #ffd203 !important;
+}
+
+.irs-bar,
+.irs-bar-edge {
+	background: #ffd203 !important;
+}
+
+.irs-from, .irs-to, .irs-single {
+	background: black !important;
+}
+
+.irs-from:after, .irs-to:after, .irs-single:after {
+	border-top-color: black !important;
+}
+
+.spinner-combo {
+	float: right;
+	margin-top: -17px;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+	font-size: -0.75em;
+	font-weight: 700;
+	color: white;
+	background-color: #ffd203;
+	display: inline-block;
+	padding: 8px 20px 8px 20px;
+	margin-top: 7px;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+mat-expansion-panel {
+	margin-top: 10px !important;
+}
+
+.mcc-color-picker-selector-preview[_ngcontent-c15] {
+	border-bottom: none !important;
+	padding-bottom: 50px !important;
+}
+
+.cdk-column-Acciones {
+	max-width: 150px !important
+}
+
+.text-c {
+	box-sizing: border-box;
+	color: rgb(69, 90, 100);
+	direction: ltr;
+	font-family: Roboto, sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	height: 23px;
+	line-height: 23.4px;
+	margin-block-end: 6.5px;
+	margin-block-start: 0px;
+	margin-bottom: 6.5px;
+	margin-inline-end: 0px;
+	margin-inline-start: 0px;
+	margin-top: 0px;
+	overflow-wrap: break-word;
+	text-align: left;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	display: inline-block;
+	width: 60px;
+}
+
+.card {
+	background-color: rgb(255, 255, 255);
+	border-bottom-color: rgb(69, 90, 100);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-left-color: rgb(69, 90, 100);
+	border-right-color: rgb(69, 90, 100);
+	border-top-color: rgb(69, 90, 100);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: rgba(69, 90, 100, 0.08) 0px 1px 20px 0px;
+	color: rgb(69, 90, 100);
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+	margin-bottom: 30px;
+	text-align: left;
+}
+
+.card-block {
+	background-color: #ffd203 !important;
+	color: rgb(69, 90, 100);
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+	overflow-wrap: break-word;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	text-align: left;
+}
+
+.card-footer {
+	background-color: rgb(76, 76, 76) !important;
+	border-top-color: rgb(69, 90, 100) !important;
+	border-top-style: none !important;
+	border-top-width: 0px !important;
+	color: rgb(69, 90, 100);
+	display: block;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	height: 51px;
+	overflow-wrap: break-word;
+	padding-bottom: 15px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	padding-top: 15px !important;
+	text-align: left;
+	text-size-adjust: 100%;
+	width: 100%;
+}
+
+.ancor-card {
+	display: block;
+	margin-bottom: 3px;
+}
+
+.bottom-text {
+	text-align: center;
+	display: block !important;
+}
+
+.text-b {
+	font-size: 17px !important;
+	top: -2px;
+	position: relative;
+}
+
+.text-card-primary {
+	color: black !important;
+}
+
+.text-card-secondary {
+	color: #455a64 !important;
+}
+
+.card-block .mat-progress-spinner circle, .card-block .mat-spinner circle {
+	stroke: black;
+}
+
+.card-block .spinner-combo {
+	margin-top: -10px !important;
+	left: 50%;
+	float: initial;
+}
+
+.mat-sort-header-button {
+	text-align:left;
+}
+
+.card-columns .card {
+	margin-bottom: 15px !important;
+}
+
+.card-block svg {
+	position: initial !important;
+}
+
+mat-dialog-container[role='dialog'] {
+	padding: 0px;
+	width: 900px;
+}
+
+mat-dialog-container[role='dialog'] .m-portlet {
+	margin-bottom: 0px;
+}

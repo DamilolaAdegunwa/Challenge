@@ -1,0 +1,41 @@
+
+
+
+<mat-form-field>
+	<mat-select #combobox
+				[disabled]="IsDisabled || isLoading"
+				[(ngModel)]="value" placeholder="{{placeholder}}"
+				(selectionChange)="selectedItemChange.emit($event)"
+				class="mat-form-field mat-form-field-fluid" [required]="isRequired">
+
+		<ngx-mat-select-search [formControl]="searchFilterCtrl" [placeholderLabel]="placeholder"> 
+
+		</ngx-mat-select-search>
+
+		<!--<mat-option *ngIf="allowNullable==true">{{emptyText}}</mat-option>-->
+		<!--<mat-option *ngFor="let item of items" [value]="item.Id">{{item.Description}}</mat-option>-->
+
+		<!--<mat-option *ngFor="let item of Items | async" [value]="item.Id">
+			{{item.Description}}
+		</mat-option>--> 
+
+		<mat-optgroup *ngFor="let group of Items | async" [label]="group.key">
+			<mat-option *ngFor="let item of group.value" [value]="item.Id">
+				{{ item.Description }}
+			</mat-option>
+		</mat-optgroup>
+
+
+
+	</mat-select>
+	<mat-hint align="start" *ngIf="hint">
+		<strong>{{hint}}</strong>
+	</mat-hint>
+	<mat-error>
+		{{placeholder}} es
+		<strong>requerida</strong>
+	</mat-error>
+	<mat-spinner class="spinner spinner-combo" [diameter]="18"  [hidden]="!isLoading"></mat-spinner>
+
+</mat-form-field>
+

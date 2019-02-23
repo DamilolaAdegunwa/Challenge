@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <Configurations>Debug;Release;Int</Configurations>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-ROSBUS.WebService.Admin-4A3A5EF2-81EB-4048-B636-192D4A068394</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Extensions\**" />
+    <Compile Remove="Url\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Extensions\**" />
+    <Content Remove="Url\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Extensions\**" />
+    <EmbeddedResource Remove="Url\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Extensions\**" />
+    <None Remove="Url\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FWK.ApiServices\FWK.ApiServices.csproj" />
+    <ProjectReference Include="..\FWK.AppService\FWK.AppService.csproj" />
+    <ProjectReference Include="..\FWK.Domain_Std\FWK.Domain_Std.csproj" />
+    <ProjectReference Include="..\FWK.Infra.Data\FWK.Infra.Data.csproj" />
+    <ProjectReference Include="..\FWK.STD\FWK.STD.csproj" />
+    <ProjectReference Include="..\WAC.Admin.AppService\WAC.Admin.AppService.csproj" />
+    <ProjectReference Include="..\WAC.Domain\WAC.Domain.csproj" />
+    <ProjectReference Include="..\WAC.Infra.Data\WAC.Infra.Data.csproj" />
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+</Project>

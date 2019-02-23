@@ -1,0 +1,26 @@
+<mat-form-field>
+	<mat-select #combobox [disabled]="IsDisabled || isLoading"
+				[(ngModel)]="value" placeholder="{{placeholder}}"
+				(selectionChange)="selectedItemChange.emit($event)"
+				class="mat-form-field mat-form-field-fluid" [required]="isRequired">
+		<mat-option *ngIf="allowNullable==true">{{emptyText}}</mat-option>
+
+
+		<!--[disabled]="group.disabled"-->
+		<mat-optgroup *ngFor="let group of items" [label]="group.key">
+			<mat-option *ngFor="let item of group.value" [value]="item.Id">
+				{{ item.Description }}
+			</mat-option>
+		</mat-optgroup>
+	</mat-select>
+	<mat-hint align="start" *ngIf="hint">
+		<strong>{{hint}}</strong>
+	</mat-hint>
+	<mat-error>
+		{{placeholder}} es
+		<strong>requerida</strong>
+	</mat-error>
+	<mat-spinner class="spinner" [diameter]="18" *ngIf="isLoading"></mat-spinner>
+
+</mat-form-field>
+

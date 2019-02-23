@@ -1,0 +1,22 @@
+
+<mat-form-field>
+	<input matInput [matAutocomplete]="auto"
+		   [(ngModel)]="value"
+		   placeholder="{{placeholder}}" [formControl]="myControl">
+	<mat-spinner class="spinner" [diameter]="18" *ngIf="isLoading"></mat-spinner>
+	<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+		<mat-option *ngFor="let item of filteredOptions | async"
+					[value]="item">
+			<span>{{ item.Description }}</span>
+		</mat-option>
+	</mat-autocomplete>
+	<mat-error>
+		{{placeholder}} es
+		<strong>requerida</strong>
+	</mat-error>
+	<mat-hint align="start" *ngIf="hint">
+		<strong>{{hint}}</strong>
+	</mat-hint>
+
+</mat-form-field>
+
