@@ -190,7 +190,7 @@ export abstract class DetailComponent<T extends ADto> extends AppComponentBase i
 
 	intBreadcrumbs() {
 
-		if (!this.detail.Id) {
+		if (!this.detail.IdValue) {
 			this.subheaderService.setBreadcrumbs([
 				{ title: this.moduleName, page: '/' + this.moduleAction },
 				{ title: this.title, icon: this.icon, page: '/' + this.moduleAction + '/' + this.page },
@@ -202,7 +202,7 @@ export abstract class DetailComponent<T extends ADto> extends AppComponentBase i
 		this.subheaderService.setBreadcrumbs([
 			{ title: this.moduleName, page: '/' + this.moduleAction},
 			{ title: this.title, icon: this.icon, page: '/' + this.moduleAction + '/' + this.page  },
-			{ title: 'Editar ' +  this.title, page: '/' + this.moduleAction + '/' +  this.page + '/edit', queryParams: { id: this.detail.Id } }
+			{ title: 'Editar ' +  this.title, page: '/' + this.moduleAction + '/' +  this.page + '/edit', queryParams: { id: this.detail.IdValue } }
 		]);
 	}
 
@@ -313,7 +313,7 @@ export abstract class DetailComponent<T extends ADto> extends AppComponentBase i
 			.subscribe((t) => {
 
 				if (this.viewMode = ViewMode.Add) {
-					this.detail.Id = t.DataObject;
+					this.detail.IdValue = t.DataObject;
 				}
 
 				//this.notificationService.info('Guardado exitosamente');
@@ -342,7 +342,7 @@ export abstract class DetailComponent<T extends ADto> extends AppComponentBase i
 	affterSave(detail: T): void {
 		if (!this.closeOnSave) {
 			this.active = false;
-			this.show(this.detail.Id);
+			this.show(this.detail.IdValue);
 		}
 	}
 

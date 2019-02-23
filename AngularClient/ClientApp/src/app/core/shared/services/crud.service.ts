@@ -47,7 +47,7 @@ export abstract class CrudService<T extends ADto> implements Service {
 			return this.http.post<ResponseModel<T>>(this.endpoint, data);
 		}
 		else {
-			let url = this.endpoint + '/' + data.Id;
+			let url = this.endpoint + '/' + data.IdValue;
 			return this.http.post<ResponseModel<T>>(url, data);
 		} 
 	}

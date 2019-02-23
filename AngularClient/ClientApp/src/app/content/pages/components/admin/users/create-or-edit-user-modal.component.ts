@@ -2,7 +2,7 @@ import { Component, Injector, ChangeDetectionStrategy } from '@angular/core';
 import { DetailEmbeddedComponent } from '../../../../../core/shared/manager/detail.component';
 import { UserService } from './user.service'; 
 import * as _ from 'lodash'; 
-import { UserRoleDto, UserDto } from '../model/user.model';
+import { User } from '../model/user.model';
 import { ViewMode } from '../../../../../core/shared/model/base.model';
 
 @Component({
@@ -10,12 +10,10 @@ import { ViewMode } from '../../../../../core/shared/model/base.model';
 	templateUrl: './create-or-edit-user-modal.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CreateOrEditUserModalComponent extends DetailEmbeddedComponent<UserDto> {
+export class CreateOrEditUserModalComponent extends DetailEmbeddedComponent<User> {
 
-	term: { isAssigned: true };
-	roles: UserRoleDto[];
-	selectedTab: number = 0;
-	isNew: boolean = false;
+	term: { isAssigned: true }; 
+	selectedTab: number = 0; 
 	constructor(
 		injector: Injector,
 		protected service: UserService) {
@@ -31,11 +29,11 @@ export class CreateOrEditUserModalComponent extends DetailEmbeddedComponent<User
 	ngAfterViewChecked(): void { 
 	}
 	
-	getNewItem(item: UserDto): UserDto {
-		return new UserDto()
+	getNewItem(item: User): User {
+		return new User()
 	}
 	
-	completedataBeforeShow(item: UserDto): any {
+	completedataBeforeShow(item: User): any {
 
 		if (this.viewMode == ViewMode.Add) {
 			 
@@ -45,8 +43,7 @@ export class CreateOrEditUserModalComponent extends DetailEmbeddedComponent<User
 		}
 	}
 
-	completedataBeforeSave(item: UserDto): any {
-		this.detail.UserRoles = this.roles;
+	completedataBeforeSave(item: User): any { 
 	}
  
  

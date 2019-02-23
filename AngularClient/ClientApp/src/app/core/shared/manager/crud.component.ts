@@ -1,24 +1,6 @@
 import { Component, ComponentFactoryResolver, ViewContainerRef, OnInit, Output, Input, ViewEncapsulation, EventEmitter, Type, ViewChild, ReflectiveInjector, Inject, Injector, OnDestroy, AfterViewInit, ElementRef, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-//import { DialogService, DialogComponent } from 'ng2-bootstrap-modal';
-//import { MatPaginator, MatSort } from '@angular/material';
-//import { Page } from 'app/shared/models/pagination';
-//import { DataSource } from '@angular/cdk/collections';
-//import { AlertService } from 'app/shared/components/alert/alert.service';
-//import { LocatorService } from 'app/shared/services/locator.service';
-//import { ICRUDComponent, DTO, Data, CrudDataSource, FilterDTO } from 'app/shared/components/crud/crud.model';
-//import { CrudService } from 'app/shared/components/crud/crud.service';
-//import { ITEMS_PER_PAGE } from 'app/shared/constants/constants';
-//import { ConfirmComponent } from 'app/shared/components/confirm/confirm.component';
-//import { AppComponentBase } from '../../shared/common/app-component-base';
-import { FilterDTO, Dto, IDto, ResponseModel, PaginListResultDto, ADto, ViewMode, ItemDto } from '../../shared/model/base.model';
-//import { LazyLoadEvent } from 'primeng/components/common/lazyloadevent';
-
-//import { DataTable } from 'primeng/components/datatable/datatable';
-//import { Paginator } from 'primeng/components/paginator/paginator';
-//import { LazyLoadEventData } from '../helpers/PrimengDatatableHelper';
-
-//import { ModalDirective, BsModalService } from 'ngx-bootstrap/modal';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router'; 
+import { FilterDTO, Dto, IDto, ResponseModel, PaginListResultDto, ADto, ViewMode, ItemDto } from '../../shared/model/base.model'; 
 
 import { DetailComponent, IDetailComponent } from './detail.component';
 import { CrudService } from '../services/crud.service';
@@ -32,12 +14,7 @@ import { SubheaderService } from '../../services/layout/subheader.service';
 import { QueryParamsModel } from '../../models/query-params.model';
 import { QueryResultsModel } from '../../models/query-results.model';
 import { LayoutUtilsService } from '../../utils/layout-utils.service';
-import { BaseDataSource } from '../models/data-sources/_base.datasource';
-
-//import { DialogService, DialogComponent } from 'ng2-bootstrap-modal';
-//import { LocatorService } from '../../shared/common/services/locator.service';
-
-//import { BreadcrumbsService } from '../../theme/layouts/breadcrumbs/breadcrumbs.service';
+import { BaseDataSource } from '../models/data-sources/_base.datasource'; 
 
 
 
@@ -230,7 +207,7 @@ export abstract class BaseCrudComponent<T extends ADto, F extends FilterDTO> ext
 	}
 
 	onEdit(row: T) {
-		this.onEditID(row.Id);
+		this.onEditID(row.IdValue);
 	}
 
 	onEditID(id: any) {
@@ -268,7 +245,7 @@ export abstract class BaseCrudComponent<T extends ADto, F extends FilterDTO> ext
 
 		this.message.confirm('¿Está seguro de que desea eliminar el registro?', stringdto || 'Confirmación', (a) => {
 			if (a.value) {
-				this.service.delete(item.Id)
+				this.service.delete(item.IdValue)
 					.subscribe(() => {
 						this.onSearch();
 						this.notify.success(this.l('Registro eliminado correctamente'));

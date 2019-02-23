@@ -1,18 +1,17 @@
 import { Component, OnInit, ViewEncapsulation,  Injector } from '@angular/core'; 
 import { BaseCrudComponent } from '../../../../../core/shared/manager/crud.component';
 import { UserService } from './user.service';   
-import { UserDto, UserFilter } from '../model/user.model';  
+import { User, UserFilter } from '../model/user.model';  
 import { MatDialog } from '@angular/material';  
 
 @Component({
     templateUrl: "./users.component.html",
     encapsulation: ViewEncapsulation.None,
 })
-export class UsersComponent extends BaseCrudComponent<UserDto, UserFilter> implements OnInit {
+export class UsersComponent extends BaseCrudComponent<User, UserFilter> implements OnInit {
 	 
-  
-
-	displayedColumns = ['Name', 'DisplayName', 'IsActive', 'AssignedRoles', 'Acciones'];
+	 
+	displayedColumns = ['Gender', 'FirstName', 'LastName', 'Email', 'BirthDate', 'UserName' , 'Uuid'];
 	 
 	constructor(injector: Injector,
 		protected _userService: UserService, 
@@ -31,13 +30,13 @@ export class UsersComponent extends BaseCrudComponent<UserDto, UserFilter> imple
 		return f;
     } 
 
-    getNewItem(item: UserDto): UserDto {
-        return new UserDto(item);
+	getNewItem(item: User): User {
+		return new User(item);
     }
 
 
-	getDescription(item: UserDto): string {
-		return item.Name;
+	getDescription(item: User): string {
+		return item.Description;
     }
 
 	  

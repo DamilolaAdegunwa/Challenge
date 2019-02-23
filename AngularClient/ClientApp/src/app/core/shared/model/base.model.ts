@@ -1,10 +1,10 @@
-﻿import * as moment from 'moment';
+import * as moment from 'moment';
 
 export interface SearchDTO { }
 
 
 export class IFilterDTO {
-    Id: any;
+	IdValue: any;
     Page: number;
     PageSize: number;
     Sort: String;
@@ -12,7 +12,7 @@ export class IFilterDTO {
 }
 
 export class FilterDTO {
-    Id: any;
+	IdValue: any;
     Page: number;
     PageSize: number;
     Sort: String;
@@ -23,19 +23,19 @@ export class FilterDTO {
 }
 
 export interface IDto {
-    Id: any
+	IdValue: any
     getDescription(): string;
 }
 
 
 export interface Data {
     isReadOnly: boolean;
-    id: number;
+	IdValue: number;
 }
 
 export abstract class ADto implements IDto {
     abstract getDescription(): string;
-    Id: any
+	IdValue: any
     constructor(data?: any) {
 
         if (data) {
@@ -49,7 +49,7 @@ export abstract class ADto implements IDto {
 
 export abstract class Dto<T> extends ADto {
     abstract getDescription(): string;
-    Id: T
+	IdValue: T
     Description: string
 
     constructor(data?: any) {
@@ -65,7 +65,7 @@ export class ItemDto extends Dto<number> {
     getDescription(): string {
         return this.Description;
     }
-    Id: number;
+	IdValue: number;
     Description: string;
     IsSelected: boolean;
     animate: boolean;
@@ -84,7 +84,7 @@ export class GroupItemDto extends Dto<number> {
     getDescription(): string {
         return this.Description;
     }
-    Id: number;
+	IdValue: number;
     Description: string;
     Items: ItemDto[];
     constructor(data?: any) {
