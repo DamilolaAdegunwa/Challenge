@@ -12,13 +12,12 @@ import { ViewMode } from '../../../../../core/shared/model/base.model';
 })
 export class CreateOrEditUserModalComponent extends DetailEmbeddedComponent<User> {
 
-	term: { isAssigned: true }; 
-	selectedTab: number = 0; 
+ 
 	constructor(
 		injector: Injector,
 		protected service: UserService) {
 		super(service, injector);
-		this.title = "Usuarios";
+		this.title = "Users";
 		this.page = 'users';
 		this.moduleAction = "admin";
 		this.moduleName = "Administración";

@@ -21,34 +21,7 @@ import { BaseDataSource } from '../models/data-sources/_base.datasource';
 export class CrudDataSource extends BaseDataSource {
 	constructor() {
 		super();
-	}
-
-	//loadProducts(queryParams: QueryParamsModel) {
-
-
-	//	var filter = new UserFilter();
-	//	filter.PageSize = queryParams.pageSize | 10;
-	//	filter.Page = queryParams.pageNumber | 10;
-	//	//filter.Sort = queryParams.
-	//	//filter.FilterText = queryParams.filter;
-
-	//	this.loadingSubject.next(true);
-	//	this.productsService.lastFilter$.next(queryParams);
-
-	//	this.productsService.search(filter).pipe(
-	//		tap(res => {
-	//			this.entitySubject.next(res.DataObject.Items);
-	//			this.paginatorTotalSubject.next(res.DataObject.TotalCount);
-	//		}),
-	//		catchError(err => of(new QueryResultsModel([], err))),
-	//		finalize(() => this.loadingSubject.next(false))
-	//	).subscribe();
-
-	//	//this.productsService.lastFilter$.next(queryParams);
-	//	//this.loadingSubject.next(true);
-
-
-	//}
+	} 
 }
 
 

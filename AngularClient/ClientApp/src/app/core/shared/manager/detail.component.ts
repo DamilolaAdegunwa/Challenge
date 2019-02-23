@@ -144,10 +144,9 @@ export abstract class DetailComponent<T extends ADto> extends AppComponentBase i
 
 	proccesParam(params: Params): void
 	{
-		const id = +params.id;
-		
-
-		if (id && id > 0) {
+		const id = params.id;
+		 
+		if (id) {
 			//this.service.getById(id).subscribe(res => {
 			//	this.product = res;
 			//	this.oldProduct = Object.assign({}, res);
@@ -194,15 +193,15 @@ export abstract class DetailComponent<T extends ADto> extends AppComponentBase i
 			this.subheaderService.setBreadcrumbs([
 				{ title: this.moduleName, page: '/' + this.moduleAction },
 				{ title: this.title, icon: this.icon, page: '/' + this.moduleAction + '/' + this.page },
-				{ title: 'Crear ' + this.title, page: '/' + this.moduleAction + '/' + this.page  +'/add' }
+				{ title: 'Create ' + this.title, page: '/' + this.moduleAction + '/' + this.page  +'/add' }
 			]);
 			return;
 		}
-		this.subheaderService.setTitle('Editar ' + this.title);
+		this.subheaderService.setTitle('Edit ' + this.title);
 		this.subheaderService.setBreadcrumbs([
 			{ title: this.moduleName, page: '/' + this.moduleAction},
 			{ title: this.title, icon: this.icon, page: '/' + this.moduleAction + '/' + this.page  },
-			{ title: 'Editar ' +  this.title, page: '/' + this.moduleAction + '/' +  this.page + '/edit', queryParams: { id: this.detail.IdValue } }
+			{ title: 'Edit ' +  this.title, page: '/' + this.moduleAction + '/' +  this.page + '/edit', queryParams: { id: this.detail.IdValue } }
 		]);
 	}
 

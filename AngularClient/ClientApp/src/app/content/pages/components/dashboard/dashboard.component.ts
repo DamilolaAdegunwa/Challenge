@@ -17,8 +17,9 @@ export class DashboardComponent implements OnInit {
 		private configService: LayoutConfigService,
 		private subheaderService: SubheaderService
 	) {
+		this.subheaderService.setBreadcrumbs([	{ title: 'Chalenge' }])
 		this.subheaderService.setTitle('Inicio');
-
+	
 		//fromEvent(this.sliderElement.onFinish 'keyup')
 		//	.pipe(
 		//		debounceTime(250),

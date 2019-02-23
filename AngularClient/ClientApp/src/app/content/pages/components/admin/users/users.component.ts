@@ -20,10 +20,17 @@ export class UsersComponent extends BaseCrudComponent<User, UserFilter> implemen
 	) {
         super(_userService, injector);
         
-        this.title = "Usuarios"
-        this.moduleName = "Administración General";
-        this.icon = "flaticon-users";        
-    }
+		this.title = "Users"
+		this.moduleName = "Administración";
+		this.icon = "flaticon-users";
+
+		
+	}
+
+	SetAllowPermission() {
+		this.allowAdd = false;
+	}
+
 	 
 	beforeSearch(items: User[]): any {
 		var order = Object.assign([], items).sort(function (a, b) {

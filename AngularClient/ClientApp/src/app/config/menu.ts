@@ -23,13 +23,12 @@ export class MenuConfig implements ConfigModel {
 						page: '/', 
 					},  
 					{
-						title: 'Administración',
+						title: 'Administration',
 						root: true, 
 						icon: 'flaticon-interface-8',
 						submenu: [
-							{
-								//permission: 'Admin.User.Administracion',
-								title: 'Usuarios',
+							{ 
+								title: 'Users',
 								icon: 'flaticon-user', 
 								root: true, 
 								page: '/admin/users',
