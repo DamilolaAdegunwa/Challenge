@@ -186,7 +186,7 @@ export abstract class AutoCompleteComponent<T extends ADto> extends AutoCompletB
 		this.isLoading = true;
 		this.cdr.detectChanges();
 
-		return this.service.GetItemsAsync(this.GetFilter(val))
+		return this.service.requestAllByFilter(this.GetFilter(val))
 			.pipe(
 				finalize(() => {
 					this.isLoading = false;
@@ -194,7 +194,7 @@ export abstract class AutoCompleteComponent<T extends ADto> extends AutoCompletB
 				}),
 				map(response => {
 
-					return response.DataObject;
+					return response.DataObject.Items;
 				}
 				));
 

@@ -37,7 +37,8 @@ import {
 	MatChipsModule,
 	MatPaginatorModule,
 	MatDialogModule,
-	MatRadioModule,
+	MatRadioModule,
+
     MatTreeModule
 } from '@angular/material';
 import { UsersComponent } from './users/users.component';
@@ -47,8 +48,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../../../../core/core.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
-import { RoleComboComponent } from './shared/role-combo.component';  
-import { PermissionTreeComponent } from './shared/permission-tree.component';   
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar'; 
 import { InterceptService } from '../../../../core/utils/intercept.service';
 
