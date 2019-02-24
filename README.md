@@ -21,7 +21,7 @@
             npm install --global @angular/cli@latest
 
 ### Back-end
-[net core 2.1] (https://dotnet.microsoft.com/download/dotnet-core/2.1)
+[net core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 
 ## Build
 ### Front-end
