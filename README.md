@@ -35,8 +35,8 @@
  ### back-end
  
    ##### documentation
- - [Metronicbuild](https://keenthemes.com/metronic/?page=docs&section=angular%2Fdeployment#docs)
- -  [Continuously build, test, and deploy](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+ - [Metronic Build](https://keenthemes.com/metronic/?page=docs&section=angular%2Fdeployment#docs)
+ - [Continuously build, test, and deploy](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 
 ## Technologies
  
