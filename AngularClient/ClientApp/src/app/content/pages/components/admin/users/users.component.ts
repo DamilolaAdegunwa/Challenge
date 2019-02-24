@@ -2,8 +2,7 @@ import { Component, OnInit, ViewEncapsulation,  Injector } from '@angular/core';
 import { BaseCrudComponent } from '../../../../../core/shared/manager/crud.component';
 import { UserService } from './user.service';   
 import { User, UserFilter } from '../model/user.model';  
-import { MatDialog } from '@angular/material';  
-import moment = require('moment');
+import { MatDialog } from '@angular/material'; 
 
 @Component({
     templateUrl: "./users.component.html",
