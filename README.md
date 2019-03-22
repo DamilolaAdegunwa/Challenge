@@ -1,5 +1,5 @@
  
-# Título
+# Title
 [Challenge front-end y back-end.](https://wcaangularclient.azurewebsites.net/admin/users)
  
 
@@ -21,7 +21,7 @@
             npm install --global @angular/cli@latest
 
 ### Back-end
-[net core 2.1] (https://dotnet.microsoft.com/download/dotnet-core/2.1)
+[net core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 
 ## Build
 ### Front-end
@@ -35,8 +35,8 @@
  ### back-end
  
    ##### documentation
- - [Metronicbuild](https://keenthemes.com/metronic/?page=docs&section=angular%2Fdeployment#docs)
- -  [Continuously build, test, and deploy](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+ - [Metronic Build](https://keenthemes.com/metronic/?page=docs&section=angular%2Fdeployment#docs)
+ - [Continuously build, test, and deploy](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 
 ## Technologies
  
